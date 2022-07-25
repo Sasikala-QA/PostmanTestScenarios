@@ -1,0 +1,2317 @@
+{
+	"info": {
+		"_postman_id": "a65037ad-7577-482e-b496-16bfe37998f1",
+		"name": "OpenAPI definition(1)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17394402"
+	},
+	"item": [
+		{
+			"name": "api/v1",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "reset Password",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"flowId\": \"occaecat cupidatat\",\n  \"password\": \"nostrud occaec\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/reset-password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"flowId\": \"occaecat cupidatat\",\n  \"password\": \"nostrud occaec\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/reset-password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "change Password",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"flowId\": \"occaecat cupidatat\",\n  \"password\": \"nostrud occaec\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/change-password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"change-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"flowId\": \"occaecat cupidatat\",\n  \"password\": \"nostrud occaec\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/change-password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"change-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "signup",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"You have successfully signed up!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"        });\r",
+											"          pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"          pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"          pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"        pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"    \r",
+											"    \r",
+											"    \r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"sasikala+v54\",\n  \"email\": \"sasikala+54v@mechasystems.com\",\n  \"password\": \"Sasidesh@1991\",\n  \"name\": \"sasikala+54v\",\n  \"sendOccasionalEmail\": true,\n  \"acceptTermsCondition\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"nulla quis\",\n  \"email\": \"eu aliqua sed\",\n  \"password\": \"non ex esse laboris\",\n  \"name\": \"pariatur eiusmod ea dolore enim\",\n  \"sendOccasionalEmail\": true,\n  \"acceptTermsCondition\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/signup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "signin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"You have successfully logged in!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"        var schema = {\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"success\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"statusCode\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"errorCode\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"subErrors\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"payload\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"authToken\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"user\": {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"id\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"baseAccountId\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"emailAddress\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"bio\": {\r",
+											"              \"type\": \"null\"\r",
+											"            },\r",
+											"            \"authIs2faEnabled\": {\r",
+											"              \"type\": \"boolean\"\r",
+											"            },\r",
+											"            \"authProviderUserId\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"authProviderCode\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"accounts\": {\r",
+											"              \"type\": \"object\",\r",
+											"              \"properties\": {\r",
+											"                \"createdAt\": {\r",
+											"                  \"type\": \"integer\"\r",
+											"                },\r",
+											"                \"updatedAt\": {\r",
+											"                  \"type\": \"integer\"\r",
+											"                },\r",
+											"                \"deletedAt\": {\r",
+											"                  \"type\": \"null\"\r",
+											"                },\r",
+											"                \"id\": {\r",
+											"                  \"type\": \"integer\"\r",
+											"                },\r",
+											"                \"name\": {\r",
+											"                  \"type\": \"string\"\r",
+											"                },\r",
+											"                \"displayName\": {\r",
+											"                  \"type\": \"string\"\r",
+											"                },\r",
+											"                \"accountType\": {\r",
+											"                  \"type\": \"integer\"\r",
+											"                },\r",
+											"                \"displayPictureMediaPath\": {\r",
+											"                  \"type\": \"null\"\r",
+											"                },\r",
+											"                \"websiteUrl\": {\r",
+											"                  \"type\": \"null\"\r",
+											"                },\r",
+											"                \"tenantCode\": {\r",
+											"                  \"type\": \"string\"\r",
+											"                },\r",
+											"                \"regionCode\": {\r",
+											"                  \"type\": \"null\"\r",
+											"                },\r",
+											"                \"geoCountry\": {\r",
+											"                  \"type\": \"null\"\r",
+											"                },\r",
+											"                \"active\": {\r",
+											"                  \"type\": \"boolean\"\r",
+											"                },\r",
+											"                \"deleted\": {\r",
+											"                  \"type\": \"boolean\"\r",
+											"                }\r",
+											"              },\r",
+											"              \"required\": [\r",
+											"                \"createdAt\",\r",
+											"                \"updatedAt\",\r",
+											"                \"deletedAt\",\r",
+											"                \"id\",\r",
+											"                \"name\",\r",
+											"                \"displayName\",\r",
+											"                \"accountType\",\r",
+											"                \"displayPictureMediaPath\",\r",
+											"                \"websiteUrl\",\r",
+											"                \"tenantCode\",\r",
+											"                \"regionCode\",\r",
+											"                \"geoCountry\",\r",
+											"                \"active\",\r",
+											"                \"deleted\"\r",
+											"              ]\r",
+											"            },\r",
+											"            \"tenantCode\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"emailSubscribed\": {\r",
+											"              \"type\": \"boolean\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"id\",\r",
+											"            \"baseAccountId\",\r",
+											"            \"emailAddress\",\r",
+											"            \"bio\",\r",
+											"            \"authIs2faEnabled\",\r",
+											"            \"authProviderUserId\",\r",
+											"            \"authProviderCode\",\r",
+											"            \"accounts\",\r",
+											"            \"tenantCode\",\r",
+											"            \"emailSubscribed\"\r",
+											"          ]\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"authToken\",\r",
+											"        \"user\"\r",
+											"      ]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"success\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"statusCode\",\r",
+											"    \"errorCode\",\r",
+											"    \"subErrors\",\r",
+											"    \"payload\"\r",
+											"  ]\r",
+											"}\r",
+											"              \r",
+											"       pm.test('Schema is valid', function () {\r",
+											"            var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"            if(!result.valid){\r",
+											"                console.log(result)\r",
+											"            }\r",
+											"            pm.expect(result.valid).to.be.true;\r",
+											"            \r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"identifier\": \"sasikala+43v@mechasystems.com\",\n  \"password\": \"Sasidesh@1991\",\n  \"rememberMe\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/signin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"identifier\": \"Lorem ex\",\n  \"password\": \"voluptate aute laboris\",\n  \"rememberMe\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/signin",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "signin With Totp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"totp_code\": 91413548,\n  \"method\": \"proident eiusmod eu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/signin-by-totp",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signin-by-totp"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"totp_code\": 91413548,\n  \"method\": \"proident eiusmod eu\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/signin-by-totp",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"signin-by-totp"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "generate Backup Codes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"backup codes are generated!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"     \r",
+											"\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/generate-backup-codes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"generate-backup-codes"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/generate-backup-codes",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"generate-backup-codes"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "activate Totp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"totp_code\": 91413548,\n  \"method\": \"proident eiusmod eu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/activate-totp",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"activate-totp"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"totp_code\": 91413548,\n  \"method\": \"proident eiusmod eu\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/activate-totp",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"activate-totp"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "get Logged In User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful GET request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"Current session received successfully!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"        var schema = {\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"success\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"statusCode\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"errorCode\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"subErrors\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"payload\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"id\": {\r",
+											"          \"type\": \"integer\"\r",
+											"        },\r",
+											"        \"baseAccountId\": {\r",
+											"          \"type\": \"integer\"\r",
+											"        },\r",
+											"        \"emailAddress\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"bio\": {\r",
+											"          \"type\": \"null\"\r",
+											"        },\r",
+											"        \"authIs2faEnabled\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"authProviderUserId\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"authProviderCode\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"accounts\": {\r",
+											"          \"type\": \"object\",\r",
+											"          \"properties\": {\r",
+											"            \"createdAt\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"updatedAt\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"deletedAt\": {\r",
+											"              \"type\": \"null\"\r",
+											"            },\r",
+											"            \"id\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"name\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"displayName\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"accountType\": {\r",
+											"              \"type\": \"integer\"\r",
+											"            },\r",
+											"            \"displayPictureMediaPath\": {\r",
+											"              \"type\": \"null\"\r",
+											"            },\r",
+											"            \"websiteUrl\": {\r",
+											"              \"type\": \"null\"\r",
+											"            },\r",
+											"            \"tenantCode\": {\r",
+											"              \"type\": \"string\"\r",
+											"            },\r",
+											"            \"regionCode\": {\r",
+											"              \"type\": \"null\"\r",
+											"            },\r",
+											"            \"geoCountry\": {\r",
+											"              \"type\": \"null\"\r",
+											"            },\r",
+											"            \"active\": {\r",
+											"              \"type\": \"boolean\"\r",
+											"            },\r",
+											"            \"deleted\": {\r",
+											"              \"type\": \"boolean\"\r",
+											"            }\r",
+											"          },\r",
+											"          \"required\": [\r",
+											"            \"createdAt\",\r",
+											"            \"updatedAt\",\r",
+											"            \"deletedAt\",\r",
+											"            \"id\",\r",
+											"            \"name\",\r",
+											"            \"displayName\",\r",
+											"            \"accountType\",\r",
+											"            \"displayPictureMediaPath\",\r",
+											"            \"websiteUrl\",\r",
+											"            \"tenantCode\",\r",
+											"            \"regionCode\",\r",
+											"            \"geoCountry\",\r",
+											"            \"active\",\r",
+											"            \"deleted\"\r",
+											"          ]\r",
+											"        },\r",
+											"        \"tenantCode\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"emailSubscribed\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"id\",\r",
+											"        \"baseAccountId\",\r",
+											"        \"emailAddress\",\r",
+											"        \"bio\",\r",
+											"        \"authIs2faEnabled\",\r",
+											"        \"authProviderUserId\",\r",
+											"        \"authProviderCode\",\r",
+											"        \"accounts\",\r",
+											"        \"tenantCode\",\r",
+											"        \"emailSubscribed\"\r",
+											"      ]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"success\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"statusCode\",\r",
+											"    \"errorCode\",\r",
+											"    \"subErrors\",\r",
+											"    \"payload\"\r",
+											"  ]\r",
+											"}\r",
+											"            \r",
+											"       pm.test('Schema is valid', function () {\r",
+											"            var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"            if(!result.valid){\r",
+											"                console.log(result)\r",
+											"            }\r",
+											"            pm.expect(result.valid).to.be.true;\r",
+											"            \r",
+											"        });\r",
+											"        pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": " Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/whoami",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"whoami"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/whoami",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"whoami"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "request Reset Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful GET request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"An email containing a recovery link has been sent to the email address you provided!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"        var schema = {\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"success\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"statusCode\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"errorCode\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"subErrors\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"payload\": {\r",
+											"      \"type\": \"null\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"success\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"statusCode\",\r",
+											"    \"errorCode\",\r",
+											"    \"subErrors\",\r",
+											"    \"payload\"\r",
+											"  ]\r",
+											"}\r",
+											"            \r",
+											"       pm.test('Schema is valid', function () {\r",
+											"            var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"            if(!result.valid){\r",
+											"                console.log(result)\r",
+											"            }\r",
+											"            pm.expect(result.valid).to.be.true;\r",
+											"            \r",
+											"        });\r",
+											"         pm.test(\"Verify errorCode is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"         pm.test(\"Verify subErrors is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"         pm.test(\"Verify payload is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.payload).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/request-reset-password?email=sasikala+43v@mechasystems.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"request-reset-password"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "sasikala+43v@mechasystems.com",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/request-reset-password?email=amet incididunt consectetur tempor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"request-reset-password"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "amet incididunt consectetur tempor"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "request Email Verification",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful GET request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"An email containing a verification link has been sent to the email address you provided!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"        var schema = {\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"success\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"statusCode\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"errorCode\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"subErrors\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"payload\": {\r",
+											"      \"type\": \"null\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"success\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"statusCode\",\r",
+											"    \"errorCode\",\r",
+											"    \"subErrors\",\r",
+											"    \"payload\"\r",
+											"  ]\r",
+											"}\r",
+											"            \r",
+											"       pm.test('Schema is valid', function () {\r",
+											"            var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"            if(!result.valid){\r",
+											"                console.log(result)\r",
+											"            }\r",
+											"            pm.expect(result.valid).to.be.true;\r",
+											"            \r",
+											"        });\r",
+											"         pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"         pm.test(\"Verify payload is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.payload).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/request-email-verification?email=sasikala+43v@mechasystems.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"request-email-verification"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "sasikala+43v@mechasystems.com",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/request-email-verification?email=amet incididunt consectetur tempor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"request-email-verification"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "amet incididunt consectetur tempor"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "get Totp Config",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful GETT request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"Totp details received successfully!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"        var schema = {\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"success\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"statusCode\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"errorCode\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"subErrors\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"payload\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"totpQrCode\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"totpSecretKey\": {\r",
+											"          \"type\": \"string\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"totpQrCode\",\r",
+											"        \"totpSecretKey\"\r",
+											"      ]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"success\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"statusCode\",\r",
+											"    \"errorCode\",\r",
+											"    \"subErrors\",\r",
+											"    \"payload\"\r",
+											"  ]\r",
+											"}\r",
+											"            \r",
+											"       pm.test('Schema is valid', function () {\r",
+											"            var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"            if(!result.valid){\r",
+											"                console.log(result)\r",
+											"            }\r",
+											"            pm.expect(result.valid).to.be.true;\r",
+											"            \r",
+											"        });\r",
+											"        pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"        \r",
+											"\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/get-totp-config",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"get-totp-config"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/get-totp-config",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"get-totp-config"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "check Username",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful GET request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"Username available for further processing!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"        var schema ={\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"success\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"statusCode\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"errorCode\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"subErrors\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"payload\": {\r",
+											"      \"type\": \"null\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"success\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"statusCode\",\r",
+											"    \"errorCode\",\r",
+											"    \"subErrors\",\r",
+											"    \"payload\"\r",
+											"  ]\r",
+											"}\r",
+											"            \r",
+											"       pm.test('Schema is valid', function () {\r",
+											"            var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"            if(!result.valid){\r",
+											"                console.log(result)\r",
+											"            }\r",
+											"            pm.expect(result.valid).to.be.true;\r",
+											"            \r",
+											"        });\r",
+											"        pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/check-username-inuse?username=sasikala+44v@mechasystems.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"check-username-inuse"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "sasikala+44v@mechasystems.com",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/check-username-inuse?username=amet incididunt consectetur tempor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"check-username-inuse"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "amet incididunt consectetur tempor"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "check Email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful GET request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"\r",
+											"\r",
+											"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+											"        \r",
+											"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+											"\r",
+											"        pm.test(\"verify success value is true\", function () {\r",
+											"            pm.test(\"Body matches string\", function () {\r",
+											"                pm.expect(pm.response.text()).to.include(\"Email address available for further processing!\");\r",
+											"            });\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.success).to.eql(true);\r",
+											"        });\r",
+											"\r",
+											"        var schema ={\r",
+											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"success\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"message\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"status\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"statusCode\": {\r",
+											"      \"type\": \"integer\"\r",
+											"    },\r",
+											"    \"errorCode\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"subErrors\": {\r",
+											"      \"type\": \"null\"\r",
+											"    },\r",
+											"    \"payload\": {\r",
+											"      \"type\": \"null\"\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"success\",\r",
+											"    \"message\",\r",
+											"    \"status\",\r",
+											"    \"statusCode\",\r",
+											"    \"errorCode\",\r",
+											"    \"subErrors\",\r",
+											"    \"payload\"\r",
+											"  ]\r",
+											"}\r",
+											"            \r",
+											"       pm.test('Schema is valid', function () {\r",
+											"            var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"            if(!result.valid){\r",
+											"                console.log(result)\r",
+											"            }\r",
+											"            pm.expect(result.valid).to.be.true;\r",
+											"            \r",
+											"        });\r",
+											"        pm.test(\"verify errorCode is null\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+											"        });\r",
+											"\r",
+											"        pm.test(\"Verify subErrors is nul\", function () {\r",
+											"            var jsonData = pm.response.json();\r",
+											"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+											"\r",
+											"        });\r",
+											"\r",
+											"    \r",
+											"    });\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "auth-token",
+										"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/auth/check-email-inuse?email=sasikala+44v@mechasystems.com",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"check-email-inuse"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "sasikala+44v@mechasystems.com",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/auth/check-email-inuse?email=amet incididunt consectetur tempor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"check-email-inuse"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "amet incididunt consectetur tempor"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"\r",
+									"\r",
+									"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+									"        \r",
+									"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+									"\r",
+									"       \r",
+									"            pm.test(\"Body matches string\", function () {\r",
+									"                pm.expect(pm.response.text()).to.include(\"Organization created successfully!\");\r",
+									"      \r",
+									"    \r",
+									"    });\r",
+									"     pm.test(\"verify errorCode is null\", function () {\r",
+									"            var jsonData = pm.response.json();\r",
+									"            pm.expect(jsonData.errorCode).to.eql(null);\r",
+									"        });\r",
+									"\r",
+									"        pm.test(\"Verify subErrors is nul\", function () {\r",
+									"            var jsonData = pm.response.json();\r",
+									"            pm.expect(jsonData.subErrors).to.eql(null);\r",
+									"\r",
+									"        });\r",
+									"       \r",
+									"});\r",
+									"});\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "auth-token",
+								"value": " Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"sasikala+52v\",\n  \"displayName\": \"sasikala+52v\",\n  \"logoPath\": \"Sasi\",\n  \"websiteUrl\": \"null\",\n  \"auth2FARequired\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/organizations/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"tempor qui\",\n  \"displayName\": \"sit ipsum\",\n  \"logoPath\": \"laboris\",\n  \"websiteUrl\": \"consect\",\n  \"auth2FARequired\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/organizations/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "test Kratos Hook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"\r",
+							"\r",
+							"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+							"        \r",
+							"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+							"\r",
+							"       \r",
+							"            pm.test(\"Body matches string\", function () {\r",
+							"                pm.expect(pm.response.text()).to.include(\"amet incididunt consectetur tempor\");\r",
+							"      \r",
+							"    \r",
+							"    });\r",
+							"    \r",
+							"});\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "auth-token",
+						"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"dolor\",\n  \"identity\": {\n    \"id\": \"esse commodo Ut\",\n    \"schema_id\": \"culpa in\",\n    \"schema_url\": \"est et veniam\",\n    \"state\": \"tempor id nisi eu fugiat\",\n    \"state_changed_at\": \"1996-02-17T21:57:45.794Z\",\n    \"traits\": {\n      \"email\": \"labore fugiat nostrud magna\",\n      \"username\": \"ut\"\n    },\n    \"verifiable_addresses\": [\n      {\n        \"id\": \"ut labore nulla anim\",\n        \"value\": \"cupidatat\",\n        \"verified\": true,\n        \"via\": \"sunt\",\n        \"status\": \"cupidatat laborum\",\n        \"verified_at\": \"1966-03-09T14:35:19.105Z\",\n        \"created_at\": \"1981-09-24T05:35:32.713Z\",\n        \"updated_at\": \"1987-10-03T03:03:55.718Z\"\n      },\n      {\n        \"id\": \"exercitation commodo anim ut irure\",\n        \"value\": \"occaecat ea tempor ex dolore\",\n        \"verified\": true,\n        \"via\": \"mollit aute eiusmod\",\n        \"status\": \"eiusmod in amet\",\n        \"verified_at\": \"1992-08-29T21:42:14.924Z\",\n        \"created_at\": \"2001-11-27T10:02:20.845Z\",\n        \"updated_at\": \"2015-11-22T05:22:20.690Z\"\n      }\n    ],\n    \"recovery_addresses\": [\n      {\n        \"id\": \"commodo officia adipisicing\",\n        \"value\": \"do i\",\n        \"via\": \"deser\",\n        \"created_at\": \"1957-05-19T06:54:06.864Z\",\n        \"updated_at\": \"2014-10-27T01:49:07.967Z\"\n      },\n      {\n        \"id\": \"culpa magna exercitation\",\n        \"value\": \"dolor sint est\",\n        \"via\": \"exercitation ex\",\n        \"created_at\": \"1978-05-07T15:16:56.430Z\",\n        \"updated_at\": \"2003-04-10T17:51:07.702Z\"\n      }\n    ],\n    \"metadata_public\": {\n      \"empty\": false,\n      \"essed1\": {},\n      \"id5_1\": {},\n      \"Ut_c_\": {}\n    },\n    \"created_at\": \"1959-06-19T15:28:14.406Z\",\n    \"updated_at\": \"1996-08-16T09:55:36.383Z\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/getHookName?hookIdentity=amet incididunt consectetur tempor",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"getHookName"
+					],
+					"query": [
+						{
+							"key": "hookIdentity",
+							"value": "amet incididunt consectetur tempor",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": \"in tempor voluptate\",\n  \"identity\": {\n    \"id\": \"non et\",\n    \"schema_id\": \"nulla ut nisi incididunt\",\n    \"schema_url\": \"proident\",\n    \"state\": \"proident \",\n    \"state_changed_at\": \"1952-11-16T20:44:33.763Z\",\n    \"traits\": {\n      \"email\": \"occaecat dolore \",\n      \"username\": \"cillum irure magna\"\n    },\n    \"verifiable_addresses\": [\n      {\n        \"id\": \"nulla voluptate nisi aliquip\",\n        \"value\": \"\",\n        \"verified\": true,\n        \"via\": \"fugiat nostrud Lorem\",\n        \"status\": \"ad\",\n        \"verified_at\": \"2008-01-02T00:19:00.587Z\",\n        \"created_at\": \"2010-02-19T13:53:59.492Z\",\n        \"updated_at\": \"1982-12-14T11:06:59.855Z\"\n      },\n      {\n        \"id\": \"dolor\",\n        \"value\": \"dolore\",\n        \"verified\": false,\n        \"via\": \"in \",\n        \"status\": \"reprehenderit sed\",\n        \"verified_at\": \"1962-07-23T11:01:45.740Z\",\n        \"created_at\": \"1980-09-20T19:24:04.961Z\",\n        \"updated_at\": \"1956-08-30T06:04:06.417Z\"\n      }\n    ],\n    \"recovery_addresses\": [\n      {\n        \"id\": \"aliquip ut irure\",\n        \"value\": \"reprehenderit fugiat exercitation\",\n        \"via\": \"exercitation\",\n        \"created_at\": \"1956-08-08T03:06:39.934Z\",\n        \"updated_at\": \"1955-01-17T14:50:24.750Z\"\n      },\n      {\n        \"id\": \"voluptate quis\",\n        \"value\": \"dolor esse proident incididunt\",\n        \"via\": \"veniam ipsum\",\n        \"created_at\": \"1996-05-22T23:16:43.685Z\",\n        \"updated_at\": \"1968-04-26T01:11:46.624Z\"\n      }\n    ],\n    \"metadata_public\": {\n      \"empty\": true,\n      \"minim_9\": {}\n    },\n    \"created_at\": \"1980-09-21T17:01:30.105Z\",\n    \"updated_at\": \"2019-12-14T20:42:31.553Z\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/getHookName?hookIdentity=amet incididunt consectetur tempor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"getHookName"
+							],
+							"query": [
+								{
+									"key": "hookIdentity",
+									"value": "amet incididunt consectetur tempor"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "amet incididunt consectetur tempor"
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful GET request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"\r",
+							"\r",
+							"    pm.test(\"Response time is less than 4000ms\", function () {\r",
+							"        \r",
+							"        pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+							"\r",
+							"       \r",
+							"            pm.test(\"Body matches string\", function () {\r",
+							"                pm.expect(pm.response.text()).to.include(\"PONG\");\r",
+							"      \r",
+							"    \r",
+							"    });\r",
+							"           \r",
+							"});\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "auth-token",
+						"value": "Bearer 9jK4N5YFbGcEXPkvnPrfDEJLkyNfatkP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/ping",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ping",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "amet incididunt consectetur tempor"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://3.0.63.53:8080",
+			"type": "string"
+		}
+	]
+}

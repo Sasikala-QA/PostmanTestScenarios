@@ -1,0 +1,958 @@
+{
+	"id": "86b78149-32d6-473c-b515-aaa7842b3fbf",
+	"name": "OpenAPI definition(1)",
+	"timestamp": "2022-07-25T05:34:45.048Z",
+	"collection_id": "17394402-a65037ad-7577-482e-b496-16bfe37998f1",
+	"folder_id": 0,
+	"environment_id": "17394402-30acf894-be65-4288-bd1a-1a073ae5f704",
+	"totalPass": 96,
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "bc74f549-900f-4c8e-a1e3-eace4fa2c3a5",
+			"name": "reset Password",
+			"url": "http://3.0.63.53:8080/api/v1/auth/reset-password",
+			"time": 179,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				179
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "00b489d0-dc4e-407c-ae30-1237bdf26996",
+			"name": "change Password",
+			"url": "http://3.0.63.53:8080/api/v1/auth/change-password",
+			"time": 93,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				93
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c2e9a856-82ac-4bb9-8f6c-f00117efffad",
+			"name": "signup",
+			"url": "http://3.0.63.53:8080/api/v1/auth/signup",
+			"time": 565,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Response time is less than 4000ms": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Status code name has string": true,
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				565
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Response time is less than 4000ms": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Status code name has string": true,
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "7b6632f1-24e0-495d-9c33-784d1260b0c1",
+			"name": "signin",
+			"url": "http://3.0.63.53:8080/api/v1/auth/signin",
+			"time": 199,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Schema is valid": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Schema is valid": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "be11890a-b0ff-438a-8779-b96b1931a4cf",
+			"name": "signin With Totp",
+			"url": "http://3.0.63.53:8080/api/v1/auth/signin-by-totp",
+			"time": 244,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				244
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "dcd6ad3f-dae7-49ae-a691-d2d7619b75d3",
+			"name": "generate Backup Codes",
+			"url": "http://3.0.63.53:8080/api/v1/auth/generate-backup-codes",
+			"time": 304,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Successful POST request": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				304
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Successful POST request": false
+				}
+			]
+		},
+		{
+			"id": "c6846e33-701c-4cf4-bd69-8be593134a2e",
+			"name": "activate Totp",
+			"url": "http://3.0.63.53:8080/api/v1/auth/activate-totp",
+			"time": 300,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				300
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c813e69b-6b40-4c3f-9309-9f10705cc2d1",
+			"name": "get Logged In User",
+			"url": "http://3.0.63.53:8080/api/v1/auth/whoami",
+			"time": 257,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Schema is valid": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful GET request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				257
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Schema is valid": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful GET request": true
+				}
+			]
+		},
+		{
+			"id": "4ce5cd2d-b56d-4a8c-9af0-55c501c929e6",
+			"name": "request Reset Password",
+			"url": "http://3.0.63.53:8080/api/v1/auth/request-reset-password?email=sasikala+43v@mechasystems.com",
+			"time": 181,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Schema is valid": true,
+				"Verify errorCode is nul": true,
+				"Verify subErrors is null": true,
+				"Verify payload is null": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful GET request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify errorCode is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify payload is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				181
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Schema is valid": true,
+					"Verify errorCode is nul": true,
+					"Verify subErrors is null": true,
+					"Verify payload is null": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful GET request": true
+				}
+			]
+		},
+		{
+			"id": "b25801a5-26bd-4498-927e-00895985bb00",
+			"name": "request Email Verification",
+			"url": "http://3.0.63.53:8080/api/v1/auth/request-email-verification?email=sasikala+43v@mechasystems.com",
+			"time": 543,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Schema is valid": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Verify payload is nul": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful GET request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify payload is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				543
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Schema is valid": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Verify payload is nul": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful GET request": true
+				}
+			]
+		},
+		{
+			"id": "dfab3749-d7f3-4860-91b9-eff455b41c64",
+			"name": "get Totp Config",
+			"url": "http://3.0.63.53:8080/api/v1/auth/get-totp-config",
+			"time": 184,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Schema is valid": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful GETT request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GETT request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				184
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Schema is valid": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful GETT request": true
+				}
+			]
+		},
+		{
+			"id": "b36387a2-59d1-4541-8367-709e5c7021c0",
+			"name": "check Username",
+			"url": "http://3.0.63.53:8080/api/v1/auth/check-username-inuse?username=sasikala+44v@mechasystems.com",
+			"time": 128,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Schema is valid": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful GET request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				128
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Schema is valid": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful GET request": true
+				}
+			]
+		},
+		{
+			"id": "2969a323-c91d-4b7e-b861-30d07a9528d2",
+			"name": "check Email",
+			"url": "http://3.0.63.53:8080/api/v1/auth/check-email-inuse?email=sasikala+44v@mechasystems.com",
+			"time": 130,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify success value is true": true,
+				"Schema is valid": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful GET request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify success value is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				130
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify success value is true": true,
+					"Schema is valid": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful GET request": true
+				}
+			]
+		},
+		{
+			"id": "d13a3013-3f5e-4d7c-87ca-2f5a1841736a",
+			"name": "create",
+			"url": "http://3.0.63.53:8080/api/v1/organizations/create",
+			"time": 149,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"verify errorCode is null": true,
+				"Verify subErrors is nul": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"verify errorCode is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify subErrors is nul": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"verify errorCode is null": true,
+					"Verify subErrors is nul": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "a90a18f8-d83a-4a7c-9e13-900dff631f61",
+			"name": "test Kratos Hook",
+			"url": "http://3.0.63.53:8080/getHookName?hookIdentity=amet%20incididunt%20consectetur%20tempor",
+			"time": 111,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				111
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "e330f74f-320a-4e7c-b02e-b32993551fd6",
+			"name": "ping",
+			"url": "http://3.0.63.53:8080/ping",
+			"time": 128,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true,
+				"Response time is less than 4000ms": true,
+				"Status code name has string": true,
+				"Successful GET request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 4000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful GET request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				128
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true,
+					"Response time is less than 4000ms": true,
+					"Status code name has string": true,
+					"Successful GET request": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3695,
+	"collection": {
+		"requests": [
+			{
+				"id": "bc74f549-900f-4c8e-a1e3-eace4fa2c3a5",
+				"method": "PUT"
+			},
+			{
+				"id": "00b489d0-dc4e-407c-ae30-1237bdf26996",
+				"method": "PUT"
+			},
+			{
+				"id": "c2e9a856-82ac-4bb9-8f6c-f00117efffad",
+				"method": "POST"
+			},
+			{
+				"id": "7b6632f1-24e0-495d-9c33-784d1260b0c1",
+				"method": "POST"
+			},
+			{
+				"id": "be11890a-b0ff-438a-8779-b96b1931a4cf",
+				"method": "POST"
+			},
+			{
+				"id": "dcd6ad3f-dae7-49ae-a691-d2d7619b75d3",
+				"method": "POST"
+			},
+			{
+				"id": "c6846e33-701c-4cf4-bd69-8be593134a2e",
+				"method": "POST"
+			},
+			{
+				"id": "c813e69b-6b40-4c3f-9309-9f10705cc2d1",
+				"method": "GET"
+			},
+			{
+				"id": "4ce5cd2d-b56d-4a8c-9af0-55c501c929e6",
+				"method": "GET"
+			},
+			{
+				"id": "b25801a5-26bd-4498-927e-00895985bb00",
+				"method": "GET"
+			},
+			{
+				"id": "dfab3749-d7f3-4860-91b9-eff455b41c64",
+				"method": "GET"
+			},
+			{
+				"id": "b36387a2-59d1-4541-8367-709e5c7021c0",
+				"method": "GET"
+			},
+			{
+				"id": "2969a323-c91d-4b7e-b861-30d07a9528d2",
+				"method": "GET"
+			},
+			{
+				"id": "d13a3013-3f5e-4d7c-87ca-2f5a1841736a",
+				"method": "POST"
+			},
+			{
+				"id": "a90a18f8-d83a-4a7c-9e13-900dff631f61",
+				"method": "POST"
+			},
+			{
+				"id": "e330f74f-320a-4e7c-b02e-b32993551fd6",
+				"method": "GET"
+			}
+		]
+	}
+}
