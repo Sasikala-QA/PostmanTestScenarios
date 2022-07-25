@@ -1,0 +1,313 @@
+{
+	"id": "7a32c967-a09f-4f21-888c-2006fb6c851c",
+	"name": "OpenAPI definition",
+	"timestamp": "2022-07-12T04:25:59.281Z",
+	"collection_id": "17394402-d9139b4f-14b3-4ee2-aea8-dac6e3a06649",
+	"folder_id": "17394402-5d9520cf-c4f0-420e-a856-fca332e6bb1e",
+	"environment_id": "17394402-30acf894-be65-4288-bd1a-1a073ae5f704",
+	"totalPass": 11,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "28406621-abb6-44e3-ad56-c615e7b96c9f",
+			"name": "reset Password",
+			"url": "http://3.0.63.53:8080/api/v1/auth/reset-password",
+			"time": 194,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				194
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e5757b28-36b4-4789-804f-43478fd6cc3d",
+			"name": "change Password",
+			"url": "http://3.0.63.53:8080/api/v1/auth/change-password",
+			"time": 95,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				95
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "715b80ee-aeee-48eb-a6b4-7aba46a3d8fc",
+			"name": "signup",
+			"url": "http://3.0.63.53:8080/api/v1/auth/signup",
+			"time": 1400,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Status code name has string": true,
+				"Successful POST request": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1400
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Status code name has string": true,
+					"Successful POST request": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "9e679c0b-37fb-42e8-8f22-ae9f69808afd",
+			"name": "signin",
+			"url": "http://3.0.63.53:8080/api/v1/auth/signin",
+			"time": 1242,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Successful POST request": true,
+				"Status code name has string": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name has string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1242
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Successful POST request": true,
+					"Status code name has string": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "4ad2de87-fa4b-456d-9b18-d3ae465f5f66",
+			"name": "generate Backup Codes",
+			"url": "http://3.0.63.53:8080/api/v1/auth/generate-backup-codes",
+			"time": 94,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				94
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9a61b600-fb34-488d-8747-dc457ab0cc0d",
+			"name": "get Logged In User",
+			"url": "http://3.0.63.53:8080/api/v1/auth/whoami",
+			"time": 89,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				89
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "88416d92-1e80-4f72-8863-7cd8298d1915",
+			"name": "request Reset Password",
+			"url": "http://3.0.63.53:8080/api/v1/auth/request-reset-password?email=magna%20enim%20sit%20laboris",
+			"time": 88,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				88
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "acbc584f-5019-4eff-a016-614b289623ea",
+			"name": "request Email Verification",
+			"url": "http://3.0.63.53:8080/api/v1/auth/request-email-verification?email=magna%20enim%20sit%20laboris",
+			"time": 98,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				98
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "06027446-5b15-434e-861f-b0cbc77d609a",
+			"name": "check Username",
+			"url": "http://3.0.63.53:8080/api/v1/auth/check-username-inuse?username=magna%20enim%20sit%20laboris",
+			"time": 94,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				94
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "701b854f-66bb-4910-a2b8-c7e45381dd20",
+			"name": "check Email",
+			"url": "http://3.0.63.53:8080/api/v1/auth/check-email-inuse?email=magna%20enim%20sit%20laboris",
+			"time": 99,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				99
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3493,
+	"collection": {
+		"requests": [
+			{
+				"id": "28406621-abb6-44e3-ad56-c615e7b96c9f",
+				"method": "PUT"
+			},
+			{
+				"id": "e5757b28-36b4-4789-804f-43478fd6cc3d",
+				"method": "PUT"
+			},
+			{
+				"id": "715b80ee-aeee-48eb-a6b4-7aba46a3d8fc",
+				"method": "POST"
+			},
+			{
+				"id": "9e679c0b-37fb-42e8-8f22-ae9f69808afd",
+				"method": "POST"
+			},
+			{
+				"id": "4ad2de87-fa4b-456d-9b18-d3ae465f5f66",
+				"method": "POST"
+			},
+			{
+				"id": "9a61b600-fb34-488d-8747-dc457ab0cc0d",
+				"method": "GET"
+			},
+			{
+				"id": "88416d92-1e80-4f72-8863-7cd8298d1915",
+				"method": "GET"
+			},
+			{
+				"id": "acbc584f-5019-4eff-a016-614b289623ea",
+				"method": "GET"
+			},
+			{
+				"id": "06027446-5b15-434e-861f-b0cbc77d609a",
+				"method": "GET"
+			},
+			{
+				"id": "701b854f-66bb-4910-a2b8-c7e45381dd20",
+				"method": "GET"
+			}
+		]
+	}
+}
